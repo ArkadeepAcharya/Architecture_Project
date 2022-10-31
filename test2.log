@@ -1,0 +1,9 @@
+ERROR: duplicate label defined at line 4: 
+ERROR: not a number at line 6: 
+ERROR: Missing Operand at line 7: 
+ERROR: Unexpected Operand at line 8: 
+ERROR: Extra on End of Line at line 9: 
+ERROR: Invalid Label
+ERROR: bogus memonic at line 11: 
+ERROR: bogus memonic at line 12: 
+ERROR: No Such Label at line 12: 

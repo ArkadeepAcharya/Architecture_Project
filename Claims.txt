@@ -1,0 +1,155 @@
+/*****************************************************************************
+TITLE: Claims																																
+AUTHOR: ARKADEEP ACHARYA
+ROLL NO.: 2101AI41
+Declaration of Authorship
+This txt file, claims.txt, is part of the assignment of CS210 at the 
+department of Computer Science and Engg, IIT Patna . 
+*****************************************************************************/
+Files:
+==========
+*All the files I submitted, asm.cpp and emu.cpp and claims.txt, have my name and student id at the start, along with a declaration of authorship.
+
+The evidence for Assembler including the output files from the eight test examples has also been uploaded. They are test1(3 output files), test2(3 output files), test3
+(3 output file), test4(3 output files), test5(3 output files), test6(3 output files), bubble(3 output files). All the test files have been tested and work properly. As for the evidence for the emulator is uploaded
+with eight output files in file.TRACE format, for all the same files.
+
+* Submission also includes Report of the project in document and pdf format to provide evidence of the functioning of both assembler and emulator
+
+*Both of my cpp programs did not show any errors and warnings when I compiled it with g++ file.cpp
+
+*Two programs are compilable with g++ asm.cpp -o asm and g++ emu.cpp -o emu.
+
+
+=============================
+Program format and structure:
+=============================
+1. The assembler:
+
+    * with two data structures to store respectively labels and mnemonic table with expected operands.
+    * uses a single routine for both passes.
+    * detects label erros.
+    * consistent and sensible formatting with sensible program structure. 
+    * sensible variable, function & type names with explanatory comments.
+		* advanced listing file.
+		* assembles test programs.
+	  * can implements and demonstrates the instruction SET.
+
+2. The emulator :
+
+    * with two data structures to store respectively memory, mnemonic table with expected operands
+    * loads object file, 
+    * by giving the instructions like "-befor/-after" , the program can produce memory dump before/after execution.
+    * by giving the instruction like "-trace", the program prints the result of program executed.
+    * detects errant programs.
+
+
+=============================
+Testing:
+=============================
+
+1. The assembler:
+
+I have tested 7 examples shown as bellow. The errors only occurred in the file test2.asm and  file test5.asm the errors are logged and shown in terminal.
+
+The others were tested without any errors detected and produced three output files, listing file, 
+error log file and machine readable object file, for each example. 
+
+After comparing the listing files and object file of all test files
+with the implemented result given on the assignment, both of them show no difference 
+from those provided.
+ 
+
+1)
+#Input: asm test1.asm
+#Output: 
+a. test1.lst 
+b. test1.log (without any error messages)
+c. test1.o
+
+2)
+#Input:asm test2.asm
+#Output: 
+a. test2.lst 
+b. test2.log (without error messages shown as below but also in log file)
+c. test2.o
+
+error messages:
+ERROR: Duplicate Label at line 4
+WARNING: Incorrect label format at line 10
+ERROR: Unknown Symbol as operand at line 5
+ERROR: Unknown Symbol as operand at line 6
+ERROR: Operand expected at line 7
+ERROR: Operand not expected at line 8
+ERROR: Unknown Symbol as operand at line 9
+ERROR: Mnemonic not defined at line 11
+ERROR: Mnemonic not defined at line 12
+
+3)
+#Input:./asm.exe test3.asm
+#Output: 
+a. test3.lst 
+b. test3.log (without any error messages)
+c. test3.o
+
+4)
+#Input:./asm.exe test4.asm
+#Output: 
+a. test4.lst 
+b. test4.log (without any error messages)
+c. test4.o
+
+5)
+#Input:./asm.exe bubble.asm
+#Output: 
+a. bubble.lst 
+b. bubble.log (without any error messages)
+c. bubble.o
+
+6)#Input:./asm.exe test5.asm
+#Output: 
+a. test5.lst 
+b. test5.log (without any error messages but with the errors stored in log file)
+c. test5.o
+error messages:
+ERROR: Extra on End of Line at line 6: 
+ERROR: Missing Operand at line 8: 
+ERROR: Unexpected Operand at line 9: 
+ERROR: Missing Operand at line 11: 
+ERROR: bogus memonic at line 14: 
+ERROR: bogus memonic at line 15: 
+
+7)#Input:./asm.exe test6.asm
+#Output: 
+a. test5.lst 
+b. test5.log (without any error messages)
+c. test5.o
+
+
+2. The emulator:
+
+I have tested 5 examples shown as bellow. The errors occurred in the file test1.o and 
+the program ran an infinite loop. These are shown below.
+1)#Input:./emu.exe -trace bubble.o
+#Output: bubble_memdump.txt
+1034 instructions executed.
+
+2)
+#Input:./emu.exe -trace test1.o
+#Output: test1_memdump.txt
+
+3)#Input:./emu.exe -trace test6.o
+#Output: test6_memdump.txt
+1403 instruction executed
+
+4)#Input:./emu.exe -trace test5.o
+#Output: test5_memdump.txt
+error was present in this code so it ran a infinite loop.
+
+4)#Input:./emu.exe -trace test4.o
+#Output: test5_memdump.txt
+47653 instructions executed.
+
+
+
+
